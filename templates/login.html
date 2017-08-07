@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Poster Wall | Alpha -v 1.0
+    </title>
+    <link rel='stylehseet' href='static/guide.css'/>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'/>
+    <link href="{{ url_for('static', filename='cover.css') }}" rel="stylesheet">
+    <link rel='stylesheet' href='{{ url_for('static', filename='custom.css') }}'/>
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Poster Wall</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/login">Login</a></li
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="inner cover">
+            {% with messages = get_flashed_messages(with_categories = True) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  <div class="alert alert-{{ category }} alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+            <div class='login-form-custom'>
+              <h1 class="text text-primary">Login</h1>
+              <br>
+              <br>
+              {% from "includes/_formhelper.html" import render_field %}
+              <form method="POST">
+                <div class="form-group">
+                  {{ render_field(form.email, class="form-control", placeholder="Email") }}
+                </div>
+                <div class="form-group">
+                  {{ render_field(form.password, class="form-control", placeholder="Password") }}
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Log In" class="form-control btn btn-primary"/>
+                </div>
+              </form>
+              <p>Not Registered ? <a href='/add-user' class='custom-link'>Request an Account?</a></p>
+            </div>
+          </div>
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Created by Vimal Sheoran <i class="fa fa-copyright" aria-hidden="true"></i> 2017</p>
+              <p><i class="fa fa-code" aria-hidden="false"></i> ed with <i class="fa fa-heart" aria-hidden="true"></i> and <i class="fa fa-headphones" aria-hidden="true"></i></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script>window.jQuery || document.write('<script src={{ url_for('static', filename='static/jquery.min.js') }}><\/script>')</script>
+  </body>
+</html>

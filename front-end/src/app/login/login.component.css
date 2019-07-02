@@ -1,0 +1,40 @@
+.page-header {
+	color: #673ab7;
+	font-family: Robot, "Helvetica Neue", sans-serif;
+	text-align: center;
+}
+
+.login-form-control {
+	text-align: center;
+	position: relative;
+	left: 410px;
+	top: 70px;
+	width: 500px;
+	height: 300px;
+	box-shadow: 0.75px 0.75px 3px 1px #dfe1e6;
+}
+
+.form-login-actual {
+	float: left;
+	position: relative;
+	left:160px;
+	margin-top: 10px;
+}
+
+.helper-links-login {
+	position: relative;
+	top: 210px;
+	font-size: 12px;
+	left: -90px;
+	margin-top: 20px;
+	text-decoration: none;
+}
+
+a {
+	text-decoration: none;
+	color: #673ab7;
+}
+
+a:hover {
+	text-decoration: underline;
+}

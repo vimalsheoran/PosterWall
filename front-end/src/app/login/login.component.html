@@ -1,0 +1,28 @@
+<h1 class="page-header">
+  Posterwall
+</h1>
+
+<mat-card class="login-form-control">
+	<mat-card-title class="page-header">Login</mat-card-title>
+	<form class="form-login-actual">
+		<mat-form-field>
+			<input matInput placeholder="Email Id">    			
+		</mat-form-field>
+		<br>
+		<mat-form-field>
+			<input matInput placeholder="Password" type="password">
+		</mat-form-field>
+		<br>
+		<mat-form-field>
+			<mat-label>
+				Student/Society
+			</mat-label>
+			<mat-select>
+				<mat-option *ngFor="let userType of userTypes" [value]="userType">{{userType}}</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</form>
+	<div class="helper-links-login">
+		<p> <a href="#">Forgot password?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Sign Up</a> </p>
+	</div>
+</mat-card>
